@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Region</title>
+	<link rel="stylesheet" href="../../dist/css/bootstrap.min.css">
+</head>
+<body>
+	<div style="margin:20px">
+		<div class="dropdown-menu region region-pin" data-region 
+		data-lazy="false" data-value="广东省,广州市,白云区,一心大厦"
+		data-remote="./region.json">
+			<div class="region-detail">
+			<input class="form-control " type="text">
+			</div>
+		</div>
+	</div>
+
+	<div style="margin:20px">
+		<input type="text" class="form-control dropdown-toggle" id="t1" data-toggle="dropdown" style="width:400px;" value="北京市,西城区,中信大厦">
+		<div class="dropdown-menu region " data-region data-target="#t1"
+		data-lazy="false" 
+		data-remote="./region.json">
+			<div class="region-detail">
+			<input class="form-control " type="text">
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../dist/js/bootstrap.js"></script>
+</body>
+</html>
