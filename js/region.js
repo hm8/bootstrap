@@ -1,6 +1,6 @@
-! function($) {
++function($) {
 
-  "use strict"; // jshint ;_;
+  "use strict"; 
 
   var region_data,
     loading = false,
@@ -208,4 +208,4 @@
     e.stopPropagation()
   })
 
-}(window.jQuery);
+}(jQuery);

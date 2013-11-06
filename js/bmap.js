@@ -1,6 +1,6 @@
-! function($, BMap, BMAP_ANIMATION_BOUNCE) {
++ function($, BMap, BMAP_ANIMATION_BOUNCE) {
 
-  "use strict"; // jshint ;_;
+  "use strict";
 
   var BaiduMap = function(element, options) {
     this.$element = $(element)
@@ -175,4 +175,4 @@
     })
   })
 
-}(window.jQuery, window.BMap, window.BMAP_ANIMATION_BOUNCE);
+}(jQuery, BMap, BMAP_ANIMATION_BOUNCE);
