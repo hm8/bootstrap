@@ -64,6 +64,7 @@
         this._value = val
         this.target.val(val)
         this.render()
+        return this
       }
     }
 
@@ -172,13 +173,15 @@
   var old = $.fn.region
 
   $.fn.region = function(option) {
-    return this.each(function() {
+    var options = typeof option == 'object' && option
+    this.each(function() {
       var $this = $(this),
-        data = $this.data('region'),
-        options = typeof option == 'object' && option
+        data = $this.data('region')
       if (!data) $this.data('region', (data = new Region(this, options)))
-      if (typeof option == 'string') data[option]()
     })
+    if (options.instance)
+        return $(this).data('region')
+    return this
   }
 
   $.fn.region.defaults = {
