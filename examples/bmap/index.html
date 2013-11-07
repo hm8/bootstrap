@@ -9,7 +9,7 @@
 	<div class="container" style="margin:20px">
 		<div class="row" style="margin:20px">
 			<div class="col-md-6">
-				<div id="test" style="width: 400px;height: 400px;" data-bmap ></div>
+				<div id="test" style="width: 400px;height: 400px;" data-bmap data-zoom="30"></div>
 			</div>
 			<div class="col-md-6" id='log'>
 				
@@ -30,11 +30,19 @@
     			log('点击: ' + p.point)
     		}).on('find.bmap',function(p){
     			log('查找: ' + p.point)
-    		}).on('notfind.bmp',function(){
+    		}).on('notfind.bmap',function(){
     			log('没找到')
     		})
+            var bmap = $('#test').bmap({instance:true});
+            // bmap.addMenu([
+            //     { text:'定位该位置',
+            //       fn:function(point){
+            //           log('定位: ' + point.lng + "," + point.lat)
+            //       }
+            //     }]
+            // )
     		$('#dd').on('click',function(){
-    			$('#test').bmap({instance:true}).val($('#loc').val())
+    			bmap.val($('#loc').val())
     		})
     	})
     </script>

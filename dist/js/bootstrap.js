@@ -2219,6 +2219,11 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
   var BaiduMap = function(element, options) {
     this.$element = $(element)
     this.options = $.extend({}, $.fn.bmap.defaults, options)
+    this.options.scrollWheelZoom = this.options.scrollWheelZoom == 'true'
+    this.options.navigation = this.options.navigation == 'true'
+    this.options.overviewMap = this.options.overviewMap == 'true'
+    this.options.scale = this.options.scale == 'true'
+    this.options.zoom = parseInt(this.options.zoom)
     this.value = this.options.value || this.value || ''
     if (this.value) {
       this._init()
@@ -2247,6 +2252,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
     ,
     _config: function() {
+      this.map.setDefaultCursor("pointer");
       if (this.options.scrollWheelZoom) {
         this.map.enableScrollWheelZoom()
       }
@@ -2259,15 +2265,17 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
       if (this.options.scale) {
         this.map.addControl(new BMap.ScaleControl())
       }
+      if (this.menus)
+        this.map.addContextMenu(this.menus)
       var that = this
       this.map.addEventListener("click", function(e) {
+        that._locate(e.point)
         that._trigger(e.point.lng + ',' + e.point.lat)
       })
     }
 
     ,
     _search: function(address) {
-      this.map.clearOverlays()
       var myGeo = new BMap.Geocoder(),
         that = this;
       myGeo.getPoint(address, function(point) {
@@ -2282,8 +2290,10 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
     ,
     _locate: function(point) {
+      this.map.clearOverlays()
       var resultMarker = new BMap.Marker(point)
-      this.map.centerAndZoom(point, this.options.zoom)
+      this.map.centerAndZoom(point, this.options.zoom || this.map.getZoom())
+      this.options.zoom = 0
       this.map.addOverlay(resultMarker)
       resultMarker.setAnimation(BMAP_ANIMATION_BOUNCE)
       this.value = point.lng + ',' + point.lat
@@ -2346,8 +2356,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
           contextMenu.addItem(new BMap.MenuItem(menu.text, menu.fn))
         }
       })
-
-      this.map.addContextMenu(contextMenu)
+      this.menus = contextMenu
       return this
     }
   }
@@ -2369,10 +2378,10 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
   $.fn.bmap.defaults = {
     zoom: 16, // 缩放级别 15:500 16:200 20:50 
-    scrollWheelZoom: true, // 启用鼠标滚轮缩放
-    navigation: true, // 启用平移缩放控件
-    overviewMap: false, // 启用缩略地图控件
-    scale: true // 比例尺控件
+    scrollWheelZoom: 'true', // 启用鼠标滚轮缩放
+    navigation: 'true', // 启用平移缩放控件
+    overviewMap: 'false', // 启用缩略地图控件
+    scale: 'true' // 比例尺控件
   }
 
   $.fn.bmap.Constructor = BaiduMap
