@@ -108,8 +108,10 @@ module.exports = function(grunt) {
     copy: {
       fonts: {
         expand: true,
-        src: ["fonts/*"],
-        dest: 'dist/'
+        //src: ["fonts/*"],
+        cwd: '../Font-Awesome/fonts',
+        src: ['*-webfont.*'],
+        dest: 'dist/fonts'
       }
     },
 
