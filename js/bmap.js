@@ -1,4 +1,4 @@
-+ function($, BMap, BMAP_ANIMATION_BOUNCE) {
++ function($) {
 
   "use strict";
 
@@ -184,4 +184,4 @@
     })
   })
 
-}(jQuery, BMap, BMAP_ANIMATION_BOUNCE);
+}(jQuery);
