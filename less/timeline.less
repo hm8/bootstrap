@@ -1,0 +1,279 @@
+.timeline {
+    border: 0 none !important;
+    border-radius: 0 !important;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.25) !important;
+    clear: both;
+    margin: 0 !important;
+    overflow: hidden;
+    padding: 0 !important;
+    width: 100%;
+    height: 100%;
+}
+
+.timeline-slider{
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+    position: absolute;
+    height: 135px;
+    position: absolute;
+    top: 6px;
+    width: 180px;
+    z-index: 203;
+    display: none;
+}
+
+.timeline-slider .slider-control .control-left,
+.timeline-slider .slider-control .control-right,
+.timeline-slider .slider-control .control-close{
+	float: left;
+	font-size: 18px;
+	padding: 0;
+}
+
+.timeline-slider .slider-control .control-date{
+	color: #999999;
+	margin-left: 7px;
+	font-size: 12px;
+    line-height: 10px;
+    margin-top: 4px;
+    padding: 0;
+}
+
+.timeline-slider .slider-control .control-left{
+	margin-left: 5px;
+}
+
+.timeline-slider .slider-control .control-right{
+	margin-left: 5px;
+}
+
+.timeline-slider .slider-control .control-close{
+	margin-right: 5px;
+	float: right;
+}
+
+.timeline-slider .slider-content{
+	padding: 5px;
+	font-size: 14px;
+}
+
+.timeline-slider .slider-content .content-text{
+	margin-top: 5px;
+}
+
+.timeline-slider .slider-content .content-title{
+	font-size: 14px;
+	height: 25px;
+}
+
+.timeline-slider .slider-content .content-title h3{
+	font-size: 12px;
+    font-weight: bold;
+    line-height: 12px;
+    margin: 0px;
+}
+
+.timeline-slider .slider-content .content-title i{
+    float: left;
+    font-size: 25px;
+    padding: 0px 8px 0 0;
+}
+
+.timeline-nav{
+    border-top: 1px solid #E3E3E3;
+    clear: both;
+    cursor: move;
+    height: 200px;
+    position: relative;
+    width: 100%;
+}
+
+.timeline-nav .timenav-background {
+    background-color: #E9E9E9;
+    cursor: move;
+    height: 150px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    /*left: 0;
+    position: absolute;
+    top: 0;*/
+    width: 100%;
+}
+.timeline-nav .timenav-interval-background{
+    box-shadow: -1px -5px 7px rgba(0, 0, 0, 0.1);
+    height: 49px;
+    left: 0;
+    position: absolute;
+    top: 151px;
+    width: 100%;
+}
+
+.timeline-nav .timenav-line {
+    background-color: #0088CC;
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.3);
+    height: 150px;
+    left: 50%;
+    position: relative;
+    /*top: 0;*/
+    width: 3px;
+    z-index: 1;
+}
+
+.timeline-nav .time-interval-minor {
+    height: 6px;
+    left: 8px;
+    max-width: none;
+    position: absolute;
+    /*top: -2px;*/
+    white-space: nowrap;
+    z-index: 10;
+}
+.timeline-nav .time-interval > div, .timeline-nav .minor {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAMCAMAAACdvocfAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRFzMzM////040VdgAAAAJ0Uk5T/wDltzBKAAAAEklEQVR42mJgYAQCBopJgAADAAbwADHy2qHzAAAAAElFTkSuQmCC");
+    background-position: center top;
+    color: #666666;
+    display: inline-block;
+    height: 6px;
+    margin-top: 0;
+    padding-top: 0;
+    position: relative;
+    /*top: 2px;*/
+    white-space: nowrap;
+    text-indent: -24px;
+}
+.timeline-nav .minor {
+    left: -4000px; 
+    width: 80000px;
+}
+
+.timeline-toolbar{
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 23px;
+    z-index: 202;
+    list-style-type: none;
+    padding: 10px;
+    font-size: 18px;
+}
+.timeline-toolbar i{
+    color: #AEAEAE;
+}
+.timeline-toolbar i:hover{
+    color: #333333;
+}
+
+.timeline-nav .timenav{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.timeline-nav .timenav-content{
+    position: relative;
+}
+
+.timeline-nav .timenav-time{
+    background-color: #FFFFFF;
+    height: 50px;
+    left: 0;
+    line-height: 0;
+    position: absolute;
+    top: 150px;
+}
+
+.timeline-nav .time-interval {
+    left: 0;
+    position: absolute;
+    top: 5px;
+    white-space: nowrap;
+}
+
+.timeline-nav .time-interval > div {
+    background-position: left top;
+    background-repeat: no-repeat;
+    display: block;
+    font-size: 10px;
+    font-weight: normal;
+    height: 3px;
+    line-height: 20px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-top: 6px;
+    position: absolute;
+    text-align: left;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+.timeline-nav .timenav-content .marker{
+    display: block;
+    position: absolute;
+    top: 0;
+}
+.timeline-nav .timenav-content .flag{
+    background-color: #F2F2F2;
+    border: 1px solid #CECECE;
+    border-radius: 0 8px 8px 0;
+    display: block;
+    height: 40px;
+    left: 3px;
+    padding: 0;
+    position: absolute;
+    width: 130px;
+    z-index: 23;
+}
+
+.timeline-nav .timenav-content .flag:hover{
+    background-color: white;
+    cursor: pointer;
+    z-index: 25;
+}
+
+.timeline-nav .timenav-content .active .flag{
+	background-color: white;
+	z-index: 24;
+}
+
+.timeline-nav .timenav-content .flag-content {
+    overflow: hidden;
+    padding: 0 7px 2px 6px;
+    color: #999999;
+}
+
+.timeline-nav .timenav-content .flag-content i{
+    float: left;
+    font-size: 25px;
+    padding: 8px 8px 0 0;
+}
+
+.timeline-nav .timenav-content .flag-content h3 {
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 11px;
+    margin: 0px;
+}
+
+.timeline-nav .timenav-content .line{
+    background-color: rgba(204, 204, 204, 0.5);
+    box-shadow: -1px 0 0 rgba(255, 255, 255, 0.5);
+    height: 150px;
+    left: 3px;
+    position: absolute;
+    top: 0;
+    width: 1px;
+    z-index: 22;
+}
+.timeline-nav .timenav-content .dot{
+    background: none repeat scroll 0 0 #333333;
+    border-radius: 3px;
+    display: block;
+    height: 6px;
+    left: 0;
+    position: absolute;
+    top: 150px;
+    width: 6px;
+    z-index: 21;
+}

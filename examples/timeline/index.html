@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timeline</title>
+    <link rel="stylesheet" href="../../dist/css/bootstrap.min.css">
+    <style type="text/css"></style>
+</head>
+<body>
+    <div class="container" style="margin:20px;height:300px;">
+        <div id="timeline" class="timeline" data-timeline
+        data-remote="./data.json">
+        </div>
+    </div>
+    <div class="container" style="margin:20px;">
+        <button id ="refresh">过滤</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../dist/js/bootstrap.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function($) {
+            $('#refresh').on('click',function(e) {
+                $('#timeline').timeline({
+                    instance: true
+                }).refresh(function (d) {
+                    return d.text.indexOf('5') > 0
+                })
+            })
+        })
+    </script>
+</body>
+</html>

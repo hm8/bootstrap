@@ -59,7 +59,8 @@ module.exports = function(grunt) {
           'js/tab.js',
           'js/affix.js',
           'js/region.js',
-          'js/bmap.js'
+          'js/timeline.js'
+          //'js/bmap.js'
         ],
         dest: 'dist/js/<%= pkg.name %>.js'
       }
